@@ -1,0 +1,105 @@
+extends ../layout
+
+block content
+	div.row
+		div.col-md-12
+			section.panel
+				header.panel-heading #{title}
+				div.panel-body
+					form.form-horizontal(method="post",action="/intern/new")
+						input(type="hidden", name="Intern[_id]",value="#{Intern._id}")
+						.form-group
+							label.col-sm-2.control-label(for="inputTitle") Title
+							.col-sm-10
+								input#inputTitle.form-control(type="text",name="Intern[title]",value="#{Intern.title}")
+						.form-group
+							label.col-sm-2.control-label(for="inputStart_time") Start Time
+							.col-sm-10
+								input#inputStart_time.form-control.form_datetime(type="text",name="Intern[start_time]",value="#{moment(Intern.start_time).format('YYYY-MM-DD h:mm:ss')}",readonly)					
+						.form-group
+							label.col-sm-2.control-label(for="inputSalary") Salary
+							.col-sm-10
+								input#inputSalary.form-control(type="text",name="Intern[salary]",value="#{Intern.salary}")
+						.form-group
+							label.col-sm-2.control-label(for="inputArea") Area
+							.col-sm-10
+								input#inputArea.form-control(type="text",name="Intern[area]",value="#{Intern.area}")
+						.form-group
+							label.col-sm-2.control-label(for="inputEducation") Education
+							.col-sm-10
+								input#inputEducation.form-control(type="text",name="Intern[education]",value="#{Intern.education}")
+						.form-group
+							label.col-sm-2.control-label(for="inputTime") Time
+							.col-sm-10
+								input#inputTime.form-control(type="text",name="Intern[time]",value="#{Intern.time}")
+						.form-group
+							label.col-sm-2.control-label(for="inputTerm") Term
+							.col-sm-10
+								input#inputTerm.form-control(type="text",name="Intern[term]",value="#{Intern.term}")		
+						.form-group
+							label.col-sm-2.control-label(for="inputKind") Kind
+							.col-sm-10
+								input#inputKind.form-control(type="text",name="Intern[kind]",value="#{Intern.kind}")
+						.form-group
+							label.col-sm-2.control-label(for="inputSummary") Fascinate
+							.col-sm-10
+								input#Fascinate.form-control(type="text",name="Intern[fascinate]",value="#{Intern.fascinate}")
+						.form-group
+							label.col-sm-2.control-label(for="inputInfo") Info
+							.col-sm-10
+								script#container(name="Intern[info]",type="text/plain",value="#{Intern.info}" style="height:200px; width:100%")
+								input#infoContent.form-control(type="hidden",value="#{Intern.info}")
+						.form-group
+							label.col-sm-2.control-label(for="inputEnd_time") End Time
+							.col-sm-10
+								input#inputEnd_time.form-control.form_datetime(type="text",name="Intern[end_time]",value="#{moment(Intern.end_time).format('YYYY-MM-DD h:mm:ss')}",readonly)
+						.form-group
+							label.col-sm-2.control-label(for="inputCompany") Company
+							.col-sm-10
+								input#inputCompany.form-control(type="text",name="Intern[company]",value="#{Intern.company}")
+						.form-group
+							label.col-sm-2.control-label(for="inputScope") Scope
+							.col-sm-10
+								input#inputScope.form-control(type="text",name="Intern[scope]",value="#{Intern.scope}")
+						.form-group
+							label.col-sm-2.control-label(for="inputScale") Scale
+							.col-sm-10
+								input#inputScale.form-control(type="text",name="Intern[scale]",value="#{Intern.scale}")
+						.form-group
+							label.col-sm-2.control-label(for="inputWebSite") WebSite
+							.col-sm-10
+								input#inputWebSite.form-control(type="text",name="Intern[website]",value="#{Intern.website}")
+						.form-group
+							label.col-sm-2.control-label(for="inputLocation") Location
+							.col-sm-10
+								input#inputLocation.form-control(type="text",name="Intern[location]",value="#{Intern.location}")
+						.form-group
+							label.col-sm-2.control-label(for="inputCompany_image") Company Image
+							.col-sm-10
+								input#inputCompany_image.form-control(type="text",name="Intern[company_image]",value="#{Intern.company_image}")
+						.form-group
+							label.col-sm-2.control-label(for="inputHr_mail") HR Email
+							.col-sm-10
+								input#inputHr_mail.form-control(type="text",name="Intern[hr_mail]",value="#{Intern.hr_mail}")
+						.form-group
+							label.col-sm-2.control-label(for="inputIndustry") Industry
+							.col-sm-10
+								input#inputIndustry.form-control(type="text",name="Intern[industry]",value="#{Intern.industry}")
+						.form-group
+							label.col-sm-2.control-label(for="inputSource") Source
+							.col-sm-10
+								input#inputSource.form-control(type="text",name="Intern[source]",value="#{Intern.source}")
+						.form-group
+							label.col-sm-2.control-label(for="inputCid") Cid
+							.col-sm-10
+								input#inputCid.form-control(type="text",name="Intern[cid]",value="#{Intern.cid}")
+						.form-group
+							label.col-sm-2.control-label(for="inputLocation_map") Location Map
+							.col-sm-10
+								input#inputLocation_map.form-control(type="text",name="Intern[location_map]",value="#{Intern.location_map}")
+						.form-group
+							.col-sm-offset-6.col-sm-6 
+							button.btn.btn-info.col-lg-2.col-lg-offset-5(type="submit") 录入
+
+
+					script(src="/js/create.js")

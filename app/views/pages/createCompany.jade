@@ -1,0 +1,52 @@
+extends ../layout
+
+block content
+	div.row
+		div.col-md-12
+			section.panel
+				header.panel-heading #{title}
+				div.panel-body
+					form.form-horizontal(method="post",action="/company/new",enctype="multipart/form-data")
+						input(type="hidden", name="Company[_id]",value="#{Company._id}")
+						.form-group
+							label.col-sm-2.control-label(for="inputName") Name
+							.col-sm-10
+								input#inputName.form-control(type="text",name="Company[name]",value="#{Company.name}")					
+						.form-group
+							label.col-sm-2.control-label(for="inputType") Type
+							.col-sm-10
+								input#inputType.form-control(type="text",name="Company[type]",value="#{Company.type}")
+						.form-group
+							label.col-sm-2.control-label(for="inputState") State
+							.col-sm-10
+								input#inputState.form-control(type="text",name="Company[state]",value="#{Company.state}")
+						.form-group
+							label.col-sm-2.control-label 公司图片地址
+							.col-sm-10
+								input.form-control(type="text",name="Company[img]",value="#{Company.img}")
+						.form-group
+							label.col-sm-2.control-label 公司图片上传
+							.col-sm-10
+								input.form-control(type="file",name="img")
+						.form-group
+							label.col-sm-2.control-label(for="inputCapacity") Capacity
+							.col-sm-10
+								input#inputCapacity.form-control(type="text",name="Company[capacity]",value="#{Company.capacity}")
+						.form-group
+							label.col-sm-2.control-label(for="inputLocation") Location
+							.col-sm-10
+								input#inputLocation.form-control(type="text",name="Company[location]",value="#{Company.location}")
+						.form-group
+							label.col-sm-2.control-label(for="inputDescription") Description
+							.col-sm-10
+								input#inputDescription.form-control(type="text",name="Company[description]",value="#{Company.description}")		
+						.form-group
+							label.col-sm-2.control-label(for="inputHrInfo") HrInfo
+							.col-sm-10
+								input#inputHrInfo.form-control(type="text",name="Company[hrInfo]",value="#{Company.hrInfo}")
+						.form-group
+							.col-sm-offset-6.col-sm-6 
+							button.btn.btn-info.col-lg-2.col-lg-offset-5(type="submit") 录入
+
+
+					//- script(src="/js/create.js")

@@ -1,0 +1,69 @@
+header.header
+	a.logo SHIXIPAI
+	nav.navbar.navbar-static-top(role="navigation")
+		//- a.navbar-btn.sidebar-toggle(href="#",data-toggle="offcanvas",role="button")
+		//- 	span.sr-only Toggle navigation
+		//- 	span.icon-bar
+		//- 	span.icon-bar
+		//- 	span.icon-bar
+		div.navbar-right
+			ul.nav.navbar-nav
+				li.dropdown.user.user-menu
+					a.dropdown-toggle(href="#",data-toggle="dropdown")
+						i.glyphicon.glyphicon-user
+							span.username 你好，ningge
+							i.caret
+
+	//- div.container
+	//- 	div.navbar-header
+	//- 		button.navbar-toggle.collapsed(type="button",data-toggle="collapse", data-target="#bs-navbar",aria-controls="bs-navbar",aris-expanded="false")
+	//- 			span.sr-only Toggle navigation
+	//- 			span.icon-bar
+	//- 			span.icon-bar
+	//- 			span.icon-bar
+	//- 		a.navbar-brand(href="#") SHIXIPAI
+	//- 	nav.collapse.navbar-collapse#bs-navbar
+	//- 		ul.nav.navbar-nav
+	//- 			li
+	//- 				a(href="#") 实习信息
+	//- 			li 
+	//- 				a(href="#") 公司信息
+	//- 		ul.nav.navbar-nav.navbar-right
+	//- 			li
+	//- 				a(href="#") SHIXIPAI
+div.wrapper.row-offcanvas.row-offcanvas-left
+	aside.left-side.sidebar-offcanvas
+		section.sidebar
+			ul.sidebar-menu
+				li.treeview
+					a(href="#")
+						i.glyphicon.glyphicon-envelope
+						span 实习管理
+					ul.treeview-menu
+						li
+							a(href="/intern/create")
+								i.glyphicon.glyphicon-pencil
+								span 新建实习
+						li
+							a(href="/intern/list")
+								i.glyphicon.glyphicon-list-alt
+								span 实习列表
+				li.treeview
+					a(href="#")
+						i.glyphicon.glyphicon-envelope
+						span 公司管理
+					ul.treeview-menu
+						li
+							a(href="/company/create")
+								i.glyphicon.glyphicon-pencil
+								span 新建公司
+						li
+							a(href="/company/list")
+								i.glyphicon.glyphicon-list-alt
+								span 公司列表
+
+
+	aside.right-side
+		section.content
+			block content
+			

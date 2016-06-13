@@ -1,0 +1,62 @@
+extends ../layout
+
+block content
+		div.row
+			div.col-md-12
+				section.panel
+					header.panel-heading #{title}
+					div.panel-body
+
+						table.table.table-hover.table-bordered
+							thead
+								tr
+									th Title	
+									th Company
+									th Area
+									th Start Time
+									th 录入时间
+									th 更新
+									th 删除
+								tbody
+									each item in Interns
+										tr(class="item-id-#{item._id}")
+											td #{item.title}
+											td #{item.company}
+											td #{item.area}
+											td #{moment(item.start_time).format('YYYY-MM-DD h:mm:ss')}
+											td #{moment(item.createAT).format('YYYY-MM-DD h:mm:ss')}
+											td 
+												a(href="/intern/update/#{item._id}") 修改
+											td 
+												button.btn.btn-danger.del(type="button",data-id="#{item._id}") 删除
+						div.table-foot
+							ul.pagination.pagination-sm.no-margin.pull-right
+								if page == 1
+									li.disabled
+										a#back(href="#") &laquo;
+								else
+									li 
+										a#back(href="#") &laquo;						   
+								if page > 2
+									li.disabled
+										a ...
+								- var i = page - 2
+								- var amount = page + 2
+								while ++i < amount
+									if i > 0 && i <= total
+										if i == page
+											li.page.active
+												a(href="/intern/list/#{i}") #{i}
+										else
+											li.page
+												a(href="/intern/list/#{i}") #{i}
+								if page + 2 <= total
+									li.disabled
+										a ...
+								if page == total
+									li.disabled
+										a#forward(href="#") &raquo;
+								else
+									li.disabled
+										a#forward(href="#") &raquo;                         
+		script(src="/js/list.js")
